@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 browserSync = require('browser-sync').create();
 
 var styles = require('./styles');
+var scripts = require('./scripts');
 
 function reload(done) {
   browserSync.reload();
@@ -22,4 +23,5 @@ gulp.task('watch', function() {
   });
   gulp.watch('./app/index.html', reload);
   gulp.watch('./app/assets/styles/**/*.css', gulp.series(styles, cssInject));
+  gulp.watch('./app/assets/scripts/**/*.js', gulp.series(scripts, reload));
 });
