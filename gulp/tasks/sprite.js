@@ -61,10 +61,3 @@ function endClean() {
 }
 
 gulp.task('icons', gulp.series(beginClean, createSprite, createPngCopy, copySpriteCSS, copySpriteGraphic, endClean));
-
-function icons(done) {
-  gulp.series(beginClean, createSprite, createPngCopy, copySpriteCSS, copySpriteGraphic, endClean);
-  done();
-}
-
-module.exports = icons;

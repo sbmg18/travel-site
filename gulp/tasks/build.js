@@ -9,7 +9,6 @@ browserSync = require('browser-sync').create();
 
 var styles = require('./styles');
 var scripts = require('./scripts');
-var icons = require('./sprite');
 
 function deleteDistFolder(done) {
   del("./docs");
@@ -59,4 +58,4 @@ function previewDist() {
   });
 }
 
-gulp.task('build', gulp.series(icons, scripts, styles, deleteDistFolder, optimizeImages, copyAndMinifyFiles, copyGeneralFiles, previewDist));
+gulp.task('build', gulp.series(scripts, styles, deleteDistFolder, optimizeImages, copyAndMinifyFiles, copyGeneralFiles, previewDist));
