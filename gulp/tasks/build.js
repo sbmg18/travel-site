@@ -59,4 +59,4 @@ function previewDist() {
   });
 }
 
-gulp.task('build', gulp.series(scripts, styles, icons, deleteDistFolder, optimizeImages, copyAndMinifyFiles, copyGeneralFiles, previewDist));
+gulp.task('build', gulp.series(icons, scripts, styles, deleteDistFolder, optimizeImages, copyAndMinifyFiles, copyGeneralFiles, previewDist));
