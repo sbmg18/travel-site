@@ -3,6 +3,7 @@ browserSync = require('browser-sync').create();
 
 var styles = require('./styles');
 var scripts = require('./scripts');
+var modernizr = require('./modernizr');
 
 function reload(done) {
   browserSync.reload();
@@ -23,5 +24,5 @@ gulp.task('watch', function() {
   });
   gulp.watch('./app/index.html', reload);
   gulp.watch('./app/assets/styles/**/*.css', gulp.series(styles, cssInject));
-  gulp.watch('./app/assets/scripts/**/*.js', gulp.series(scripts, reload));
+  gulp.watch('./app/assets/scripts/**/*.js', gulp.series(modernizr, scripts, reload));
 });
